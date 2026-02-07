@@ -31,7 +31,7 @@ const services = [
         title: "Ayurvedic Wellness",
         description: "Restore balance and harmony to your body and mind with our authentic Ayurvedic treatments and personalized wellness plans.",
         benefits: ["Customized detox programs", "Stress relief therapies", "Natural healing methods", "Expert consultations"],
-        image: "/wellness-preview.png",
+        image: "/wellness-preview.svg",
         link: "/wellness",
         cta: "Discover Treatments",
     },
@@ -59,8 +59,8 @@ export default function ServicesOverview() {
                             key={service.id}
                             onClick={() => setActiveTab(service.id)}
                             className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === service.id
-                                    ? "bg-primary text-white shadow-lg scale-105"
-                                    : "bg-white text-text hover:bg-gray-100"
+                                ? "bg-primary text-white shadow-lg scale-105"
+                                : "bg-white text-text hover:bg-gray-100"
                                 }`}
                         >
                             {service.title}

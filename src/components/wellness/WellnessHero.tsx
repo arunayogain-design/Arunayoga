@@ -7,7 +7,7 @@ export default function WellnessHero() {
     return (
         <section className="relative h-[80vh] flex items-center justify-center bg-brand-green overflow-hidden">
             {/* Background Image Placeholder */}
-            <div className="absolute inset-0 opacity-40 bg-[url('/wellness-preview.png')] bg-cover bg-center" />
+            <div className="absolute inset-0 opacity-40 bg-[url('/classes-preview.png')] bg-cover bg-center" />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-brand-green/80 to-brand-green/60" />

@@ -18,6 +18,9 @@ export default function ClassesHero() {
 
     return (
         <section className="relative py-24 bg-brand-light-blue/10 overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0 opacity-10 bg-[url('/classes-preview.png')] bg-cover bg-center" />
+
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-12">
                     <motion.h1

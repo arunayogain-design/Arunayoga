@@ -11,7 +11,7 @@ const testimonials = [
         text: "The teacher training program at Arunayoga was transformative. Yogini Arunadevi's wisdom and motherly care guided me to a depth of practice I never imagined possible.",
         name: "Sarah Jenkins",
         location: "Yoga Teacher, Australia",
-        image: "/student-1.png",
+        image: "/student-1.svg",
         rating: 5,
     },
     {
@@ -19,7 +19,7 @@ const testimonials = [
         text: "I came to Arunayoga with chronic back pain. After 3 weeks of therapeutic yoga and Ayurvedic treatments, I feel like a new person. Forever grateful.",
         name: "Rajesh Kumar",
         location: "IT Professional, Hyderabad",
-        image: "/student-2.png",
+        image: "/student-2.svg",
         rating: 5,
     },
     {
@@ -27,7 +27,7 @@ const testimonials = [
         text: "Studying here felt like coming home. The authentic teachings, the beautiful environment, and the supportive community made my 300-hour training unforgettable.",
         name: "Elena Rossi",
         location: "Studio Owner, Italy",
-        image: "/student-3.png",
+        image: "/student-3.svg",
         rating: 5,
     },
 ];

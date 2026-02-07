@@ -13,20 +13,21 @@ export default function Hero() {
                     src="/hero-bg.png"
                     alt="Yogini Arunadevi leading a yoga session"
                     fill
-                    className="object-cover"
+                    className="object-cover blur-[10px] scale-105"
                     priority
+                    unoptimized
                 />
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <div className="relative z-10 container mx-auto px-4 text-center text-white drop-shadow-md">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-primary leading-tight"
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-primary leading-tight drop-shadow-lg"
                 >
                     Build Your Energy.
                     <br />

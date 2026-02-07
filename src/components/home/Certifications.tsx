@@ -3,15 +3,17 @@
 import { motion } from "framer-motion";
 
 const logos = [
-    "/logo-annamalai.png",
-    "/logo-yoga-alliance.png",
-    "/logo-ministry.png",
-    "/logo-award.png",
-    "/logo-annamalai.png", // Duplicate for infinite scroll
-    "/logo-yoga-alliance.png",
-    "/logo-ministry.png",
-    "/logo-award.png",
+    "/logo-annamalai.svg",
+    "/logo-yoga-alliance.svg",
+    "/logo-ministry.svg",
+    "/logo-award.svg",
+    "/logo-annamalai.svg",
+    "/logo-yoga-alliance.svg",
+    "/logo-ministry.svg",
+    "/logo-award.svg",
 ];
+
+import Image from "next/image";
 
 export default function Certifications() {
     return (
@@ -35,18 +37,12 @@ export default function Certifications() {
                 >
                     {[...logos, ...logos].map((logo, index) => (
                         <div key={index} className="relative w-32 h-16 flex-shrink-0 grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
-                            {/* Using a placeholder div if image missing, or Image component */}
-                            <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400 text-xs rounded">
-                                Logo {index % 4 + 1}
-                            </div>
-                            {/* 
-               <Image
-                 src={logo}
-                 alt="Certification Logo"
-                 fill
-                 className="object-contain"
-               /> 
-               */}
+                            <Image
+                                src={logo}
+                                alt="Certification Logo"
+                                fill
+                                className="object-contain"
+                            />
                         </div>
                     ))}
                 </motion.div>
