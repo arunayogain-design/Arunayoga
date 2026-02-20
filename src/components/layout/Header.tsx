@@ -57,10 +57,10 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-t-4 border-primary ${isScrolled ? "bg-white shadow-md py-2" : "bg-white/95 backdrop-blur-sm py-3"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-t-8 border-primary bg-white ${isScrolled ? "shadow-md py-2" : "py-3"
                 }`}
         >
-            <div className="container mx-auto px-4 flex items-center justify-between gap-6">
+            <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3">
                     <Image
@@ -68,32 +68,32 @@ export default function Header() {
                         alt="Arunayoga"
                         width={52}
                         height={52}
-                        className="h-12 w-12 object-contain"
+                        className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                     />
-                    <div className="hidden md:block">
-                        <p className="text-xl leading-tight font-bold font-primary text-primary">Arunayoga</p>
-                        <p className="text-xs text-text">Training & Research Institute</p>
+                    <div className="hidden sm:block">
+                        <p className="text-xl sm:text-2xl leading-tight font-bold font-primary text-primary">Arunayoga</p>
+                        <p className="text-[10px] sm:text-[13px] text-gray-500 font-medium whitespace-nowrap">Training & Research Institute</p>
                     </div>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-5">
+                <nav className="hidden xl:flex items-center gap-5 xl:gap-8 flex-1 justify-center">
                     {navItems.map((item) => (
                         <div key={item.name} className="relative group">
                             <Link
                                 href={item.href}
-                                className="text-sm font-semibold text-text transition-colors hover:text-primary inline-flex items-center gap-1 py-2"
+                                className="text-[15px] font-medium text-gray-600 transition-colors hover:text-primary inline-flex items-center py-2"
                             >
                                 {item.name}
-                                {item.children ? <ChevronDown className="w-4 h-4" /> : null}
+                                {item.children ? <ChevronDown className="w-4 h-4 ml-1 opacity-60 mt-0.5" /> : null}
                             </Link>
                             {item.children ? (
-                                <div className="absolute left-0 top-full min-w-[240px] rounded-lg border border-gray-100 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2">
+                                <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-full min-w-[260px] rounded-xl border border-gray-100 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2">
                                     {item.children.map((child) => (
                                         <Link
                                             key={child.name}
                                             href={child.href}
-                                            className="block px-3 py-2 text-sm text-text hover:bg-gray-50 hover:text-primary rounded-md"
+                                            className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-colors"
                                         >
                                             {child.name}
                                         </Link>
@@ -105,13 +105,11 @@ export default function Header() {
                 </nav>
 
                 {/* Utilities & CTA */}
-                <div className="hidden lg:flex items-center gap-5">
-                    <div className="flex items-center gap-2 text-sm font-medium text-text">
-                        <Phone className="w-4 h-4" />
-                        <span>+91 9440698003</span>
-                    </div>
+                <div className="hidden lg:flex items-center">
                     <Link href="/contact?subject=demo">
-                        <Button size="sm" className="bg-primary hover:bg-primary/90 text-white">Book Demo</Button>
+                        <Button className="bg-primary hover:bg-[#e00000] text-white font-semibold rounded-lg px-7 h-[46px] text-[15px] shadow-sm tracking-wide">
+                            Book Demo
+                        </Button>
                     </Link>
                 </div>
 

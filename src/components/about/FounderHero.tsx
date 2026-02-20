@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 export default function FounderHero() {
     return (
-        <section className="relative h-[90vh] flex flex-collg:flex-row overflow-hidden bg-primary text-white">
+        <section className="relative h-[90vh] flex flex-col lg:flex-row overflow-hidden bg-primary text-white">
             {/* Left: Image */}
             <div className="lg:w-1/2 relative h-1/2 lg:h-full">
                 <Image
-                    src="/assets/Yoga-Guru-Arunadevi_1.jpg"
+                    src="/assets/arunadevi.jpeg"
                     alt="Yogini Arunadevi with students in meditation"
                     fill
                     className="object-cover"

@@ -86,14 +86,14 @@ export default function MediaCoverage() {
                                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                                
+
                                 {/* Category Badge */}
                                 <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full">
                                     <item.icon className="w-4 h-4 text-primary" />
                                     <span className="text-sm font-semibold text-primary">{item.category}</span>
                                 </div>
                             </div>
-                            
+
                             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                                 <h3 className="text-2xl font-bold font-primary mb-2">
                                     {item.title}

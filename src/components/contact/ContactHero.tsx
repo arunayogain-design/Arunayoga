@@ -6,15 +6,12 @@ import contactHeroImage from "@/assets/arunadevi-1.jpg";
 
 export default function ContactHero() {
     return (
-        <section className="relative py-24 bg-brand-dark-grey text-white overflow-hidden">
-            <Image
-                src={contactHeroImage}
-                alt="Contact Arunayoga"
-                fill
-                priority
-                className="object-cover"
+        <section className="relative py-32 bg-brand-dark-grey text-white overflow-hidden">
+            <div
+                className="absolute inset-0 bg-cover bg-fixed bg-center z-0"
+                style={{ backgroundImage: `url(${contactHeroImage.src})` }}
             />
-            <div className="absolute inset-0 bg-black/65" />
+            <div className="absolute inset-0 bg-black/65 z-0" />
 
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <motion.div
