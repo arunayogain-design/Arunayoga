@@ -20,7 +20,7 @@ const services = [
     {
         id: "training",
         title: "Yoga Teacher Training",
-        description: "Become a certified yoga teacher with our internationally recognized programs. Learn Asanas, Mudras, Bandhas, Pranayamas, Shatkriyas, Chanting, Mantras, and traditional yoga techniques.",
+        description: "Become a <strong>certified yoga teacher</strong> with our <strong>internationally recognized programs</strong>. Learn Asanas, Mudras, Bandhas, Pranayamas, Shatkriyas, Chanting, Mantras, and <strong>traditional yoga techniques</strong>.",
         benefits: ["Diploma in Yoga (200 Hours)", "Advanced Diploma (300 Hours)", "PG Diploma in Yoga (500 Hours)", "Yoga Alliance & University Certified"],
         image: "/assets/community-1.jpeg",
         link: "/teacher-training",
@@ -28,12 +28,12 @@ const services = [
     },
     {
         id: "wellness",
-        title: "Ayurvedic Treatments",
-        description: "Experience authentic Ayurvedic therapies including Shirodhara, Kati Vasti, Navarakidi, and various healing massages for complete body-mind rejuvenation.",
-        benefits: ["Ayurvedic Detox programs", "Stress-relief therapies", "Pain management treatments", "Personalized wellness plans"],
+        title: "Ayurvedic Therapy",
+        description: "Experience <strong>authentic Ayurvedic therapies</strong> including Shirodhara, Kati Vasti, Navarakidi, and various healing massages for <strong>complete body-mind rejuvenation</strong>.",
+        benefits: ["Ayurvedic Detox programs", "Stress-relief therapies", "Pain management therapies", "Personalized wellness plans"],
         image: "/assets/ayurvedic-treatment-1.jpg",
         link: "/wellness",
-        cta: "Discover Treatments",
+        cta: "Discover Therapy",
     },
 ];
 
@@ -93,9 +93,7 @@ export default function ServicesOverview() {
                                         <h3 className="text-2xl font-bold font-primary text-primary mb-4">
                                             {service.title}
                                         </h3>
-                                        <p className="text-text mb-6 leading-relaxed">
-                                            {service.description}
-                                        </p>
+                                        <p className="text-text mb-6 leading-relaxed" dangerouslySetInnerHTML={{ __html: service.description }} />
                                         <ul className="space-y-3 mb-8">
                                             {service.benefits.map((benefit, index) => (
                                                 <li key={index} className="flex items-center gap-3">

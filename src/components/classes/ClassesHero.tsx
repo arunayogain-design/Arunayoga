@@ -5,12 +5,39 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ClassesHero() {
     const [level, setLevel] = useState("");
     const [goal, setGoal] = useState("");
+    const router = useRouter();
 
     const handleSearch = () => {
+        if (goal === "teach") {
+            router.push("/teacher-training#courses");
+            return;
+        }
+        
+        // Map selections to class types
+        let targetClass = "";
+        
+        if (goal === "stress" || goal === "heal") {
+            targetClass = "Yoga Nidra"; // Relaxation for stress/healing
+        } else if (goal === "strength") {
+            targetClass = "Asana Practice"; // Physical strength
+        } else if (goal === "learn" || level === "beginner") {
+            targetClass = "Shat Karma"; // Start with cleansing for beginners
+        } else if (level === "advanced") {
+            targetClass = "Pranayama"; // Advanced breathing
+        } else if (level === "prenatal" || level === "senior") {
+            targetClass = "Yoga Nidra"; // Gentle for prenatal/seniors
+        }
+        
+        // Store selection in sessionStorage for ClassesGrid to use
+        if (targetClass) {
+            sessionStorage.setItem("recommendedClass", targetClass);
+        }
+        
         const element = document.getElementById("daily-classes");
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });

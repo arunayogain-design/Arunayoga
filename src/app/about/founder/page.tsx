@@ -1,11 +1,10 @@
 import FounderHero from "@/components/about/FounderHero";
 import HeritageStory from "@/components/about/HeritageStory";
 import Achievements from "@/components/about/Achievements";
-import Vision from "@/components/about/Vision";
 
 export const metadata = {
     title: "Yogini Arunadevi | Founder - Arunayoga",
-    description: "Meet Yogini Arunadevi, the visionary founder of Arunayoga Training and Research Institute with over 30 years of experience.",
+    description: "Meet Yogini Arunadevi, the visionary founder of ATRI (Arunayoga Training & Research Institute) with over 35 years of experience.",
 };
 
 export default function FounderPage() {
@@ -14,7 +13,6 @@ export default function FounderPage() {
             <FounderHero />
             <HeritageStory />
             <Achievements />
-            <Vision />
         </main>
     );
 }

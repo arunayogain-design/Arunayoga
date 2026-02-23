@@ -1,4 +1,4 @@
-import BlogList from "@/components/blog/BlogList";
+import { notFound } from "next/navigation";
 
 export const metadata = {
     title: "Blog | Arunayoga",
@@ -6,15 +6,5 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-    return (
-        <main className="min-h-screen pt-20">
-            <div className="bg-brand-light-blue/10 py-16 text-center">
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl lg:text-5xl font-bold font-primary text-primary mb-4">Arunayoga Journal</h1>
-                    <p className="text-lg text-gray-600">Traditional yoga, ayurveda and wellness insights from Arunayoga.</p>
-                </div>
-            </div>
-            <BlogList showHeader={false} />
-        </main>
-    );
+    notFound();
 }

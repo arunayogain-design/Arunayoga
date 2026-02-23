@@ -32,7 +32,7 @@ export default function TeamGrid() {
                         Meet Yogini Arunadevi
                     </h2>
                     <p className="text-text max-w-2xl mx-auto">
-                        Founder & Lead Director with over 30 years of experience in therapeutic yoga, 
+                        Founder & Lead Director with over 35 years of experience in therapeutic yoga,
                         descending from a lineage of spiritual healers including Siddhayogini Sadamma.
                     </p>
                 </div>

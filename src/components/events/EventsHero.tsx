@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import eventsHeroImage from "@/assets/community-2.jpg";
 
 export default function EventsHero() {
     return (
         <section className="relative py-24 bg-brand-dark-grey text-white overflow-hidden">
             <Image
-                src={eventsHeroImage}
+                src="/assets/community-2.jpg"
                 alt="Arunayoga events"
                 fill
                 priority

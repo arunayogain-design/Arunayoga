@@ -21,10 +21,14 @@ export default function ContactContent() {
                                     <div>
                                         <h3 className="font-bold text-gray-900 mb-1">Our Location</h3>
 <p className="text-gray-600">
-                                            Arunayoga Training & Research Institute,<br />
-                                            Park #7, Rd Number 44,<br />
-                                            Kavuri Hills, Madhapur,<br />
-                                            Hyderabad, Telangana - 500033
+                                            <span className="block font-semibold text-primary">ATRI</span>
+                                            <span className="block text-xs uppercase tracking-[0.2em] text-gray-500 mb-1">
+                                                Arunayoga Training & Research Institute
+                                            </span>
+                                            8-3, 833/13A, Kundan Marble Ln,<br />
+                                            Sagar Society, Sri Nagar Colony,<br />
+                                            Aurora Colony, Banjara Hills,<br />
+                                            Hyderabad, Telangana 500073.
                                         </p>
                                         <a 
                                             href="https://www.google.co.in/maps/place/Aruna+Yoga/@17.4353349,78.3967849,15z" 
@@ -128,16 +132,15 @@ export default function ContactContent() {
                                     <optgroup label="Daily Classes">
                                         <option value="demo">Book a Demo Class</option>
                                         <option value="class-inquiry">Class Schedule Inquiry</option>
-                                        <option value="pricing">Pricing Information</option>
                                     </optgroup>
                                     <optgroup label="Teacher Training">
                                         <option value="diploma-200">Diploma in Yoga (200 Hours)</option>
-                                        <option value="advanced-300">Advanced Diploma (300 Hours)</option>
+                                        <option value="advanced-300">Advanced Diploma in Yoga (300 Hours)</option>
                                         <option value="pg-diploma-500">PG Diploma in Yoga (500 Hours)</option>
                                         <option value="teacher-training">General Teacher Training Inquiry</option>
                                     </optgroup>
-                                    <optgroup label="Ayurvedic Treatments">
-                                        <option value="treatment">Book a Treatment</option>
+                                    <optgroup label="Ayurvedic Therapy">
+                                        <option value="treatment">Book a Therapy</option>
                                         <option value="consultation">Wellness Consultation</option>
                                         <option value="detox">Ayurvedic Detox Program</option>
                                         <option value="stress-relief">Stress Relief Program</option>

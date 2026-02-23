@@ -5,9 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Check, Clock, MapPin, Users, Award, Calendar } from "lucide-react";
-import logoImage from "@/assets/logo.png";
-import yogaAllianceImage from "@/assets/download.png";
-import affiliationImage from "@/assets/affiliation.jpg";
+import CollageBackground from "@/components/teacher-training/CollageBackground";
 
 const curriculum = [
     "Asanas, Mudras, Bandhas, Pranayamas",
@@ -42,15 +40,16 @@ export default function Diploma200Page() {
             <main className="pt-20">
                 {/* Hero Section */}
                 <section className="relative min-h-[60vh] flex items-center bg-brand-dark-grey text-white overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image
-                            src="/assets/community-1.jpeg"
-                            alt="Yoga Teacher Training"
-                            fill
-                            className="object-cover opacity-40"
-                        />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-0" />
+                    <CollageBackground 
+                        images={[
+                            "/Classes/Asana Practice - 1.png",
+                            "/Classes/Pranayama - 1.png",
+                            "/Classes/Dhyan-1.png",
+                            "/Classes/Yoga Nidra - 1.png"
+                        ]}
+                        opacity={0.3}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10" />
 
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -118,56 +117,6 @@ export default function Diploma200Page() {
                     </div>
                 </section>
 
-                {/* Pricing */}
-                <section className="py-16 bg-gray-50">
-                    <div className="container mx-auto px-4">
-                        <div className="max-w-4xl mx-auto">
-                            <h2 className="text-3xl font-bold font-primary text-center mb-12">Course Fees</h2>
-                            <div className="grid md:grid-cols-2 gap-8">
-                                <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-primary">
-                                    <h3 className="text-xl font-bold mb-2">International Students</h3>
-                                    <div className="text-4xl font-bold text-primary mb-4">USD 1,800</div>
-                                    <ul className="space-y-2 text-gray-600 text-sm">
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            Food & Accommodation Included
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            Shared Accommodation
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            All Course Materials
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="bg-white rounded-2xl p-8 shadow-lg">
-                                    <h3 className="text-xl font-bold mb-2">Indian Students</h3>
-                                    <div className="text-4xl font-bold text-primary mb-4">INR 75,000</div>
-                                    <ul className="space-y-2 text-gray-600 text-sm">
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            Course Fee Only
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            Food & Accommodation: INR 25,000 extra
-                                        </li>
-                                        <li className="flex items-center gap-2">
-                                            <Check className="w-4 h-4 text-green-500" />
-                                            All Course Materials
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p className="text-center text-sm text-gray-500 mt-6">
-                                * Non-refundable booking amount: INR 10,000 or USD 200. Option to switch batches within 12 months.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Curriculum */}
                 <section className="py-16 bg-white">
                     <div className="container mx-auto px-4">
@@ -206,13 +155,28 @@ export default function Diploma200Page() {
                                 </p>
                                 <div className="flex flex-wrap justify-center items-center gap-12">
                                     <div className="relative w-40 h-32">
-                                        <Image src={logoImage} alt="Arunayoga" fill className="object-contain" />
+                                        <Image
+                                            src="/assets/logo.png"
+                                            alt="Arunayoga"
+                                            fill
+                                            className="object-contain"
+                                        />
                                     </div>
                                     <div className="relative w-40 h-32">
-                                        <Image src={yogaAllianceImage} alt="Yoga Alliance USA" fill className="object-contain" />
+                                        <Image
+                                            src="/assets/download.png"
+                                            alt="Yoga Alliance USA"
+                                            fill
+                                            className="object-contain"
+                                        />
                                     </div>
                                     <div className="relative w-40 h-32">
-                                        <Image src={affiliationImage} alt="Annamalai University" fill className="object-contain" />
+                                        <Image
+                                            src="/assets/affiliation.jpg"
+                                            alt="Annamalai University"
+                                            fill
+                                            className="object-contain"
+                                        />
                                     </div>
                                 </div>
                                 <p className="text-sm text-gray-500 mt-6">
@@ -248,7 +212,7 @@ export default function Diploma200Page() {
                 </section>
 
                 {/* CTA */}
-                <section className="py-16 bg-primary text-white">
+                <section className="py-16 bg-brand-dark-grey text-white border-t-2 border-black">
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-3xl font-bold font-primary mb-4">Ready to Begin Your Journey?</h2>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">

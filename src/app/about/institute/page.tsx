@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookOpen, Leaf, Heart, Globe, MapPin } from "lucide-react";
-import campusImage from "@/assets/IMG_0872.jpg";
-import classesImage from "@/assets/classes-1.jpg";
 
 export default function InstitutePage() {
     return (
@@ -12,7 +10,7 @@ export default function InstitutePage() {
             {/* Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <Image
-                    src={campusImage}
+                    src="/assets/IMG_0872.jpg"
                     alt="Arunayoga Campus"
                     fill
                     className="object-cover"
@@ -77,7 +75,7 @@ export default function InstitutePage() {
                             className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl"
                         >
                             <Image
-                                src={classesImage}
+                                src="/assets/classes-1.jpg"
                                 alt="Yoga Class in Session"
                                 fill
                                 className="object-cover"
@@ -103,7 +101,7 @@ export default function InstitutePage() {
                             An Oasis in the Heart of Hyderabad
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl leading-relaxed">
-                            Nestled in <strong>Kavuri Hills, Madhapur, Telangana</strong>, our center is surrounded by lush greenery,
+                            Located in <strong>Banjara Hills, Hyderabad, Telangana</strong>, our center is surrounded by lush greenery,
                             creating a serene, away-from-the-city atmosphere while remaining conveniently accessible. It's the perfect
                             environment to retreat, heal, and connect with your inner self.
                         </p>
@@ -136,7 +134,7 @@ export default function InstitutePage() {
                             {
                                 icon: Leaf,
                                 title: "Ayurveda & Naturopathy",
-                                desc: "Problem-specific treatments, detox, and stress-relief programs promoting holistic healing."
+                                desc: "Problem-specific therapies, detox, and stress-relief programs promoting holistic healing."
                             },
                             {
                                 icon: Globe,
@@ -168,7 +166,7 @@ export default function InstitutePage() {
             </section>
 
             {/* Global Legacy Stats */}
-            <section className="py-20 bg-primary text-white">
+            <section className="py-20 bg-brand-dark-grey text-white border-t-2 border-black">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
                         <motion.div

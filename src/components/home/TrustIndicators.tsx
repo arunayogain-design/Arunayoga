@@ -1,17 +1,17 @@
 "use client";
 
-import { Trophy, Users, Globe, Calendar } from "lucide-react";
+import { Trophy, Users, Globe, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
     {
         icon: Trophy,
-        value: "30+",
+        value: "35+",
         label: "Years of Excellence",
     },
     {
         icon: Users,
-        value: "2000+",
+        value: "35000+",
         label: "Teachers Certified",
     },
     {
@@ -20,9 +20,9 @@ const stats = [
         label: "Countries Represented",
     },
     {
-        icon: Calendar,
-        value: "Multiple",
-        label: "Awards & Recognition",
+        icon: Heart,
+        value: "15,000+",
+        label: "Lives Transformed",
     },
 ];
 
@@ -30,6 +30,9 @@ export default function TrustIndicators() {
     return (
         <section className="py-16 bg-brand-light-blue/10">
             <div className="container mx-auto px-4">
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold font-primary text-text">Our Impact</h2>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {stats.map((stat, index) => (
                         <motion.div

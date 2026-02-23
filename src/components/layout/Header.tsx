@@ -33,14 +33,12 @@ const navItems = [
         name: "Wellness",
         href: "/wellness",
         children: [
-            { name: "Ayurvedic Treatments", href: "/wellness/treatments" },
+            { name: "Ayurvedic Therapy", href: "/wellness/treatments" },
             { name: "Ayurvedic Detox", href: "/wellness/detox" },
             { name: "Stress Relief", href: "/wellness/stress-relief" },
         ],
     },
     { name: "Events", href: "/events" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
@@ -56,28 +54,28 @@ export default function Header() {
     }, []);
 
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-t-8 border-primary bg-white ${isScrolled ? "shadow-md py-2" : "py-3"
-                }`}
-        >
-            <div className="container mx-auto px-4 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-3">
-                    <Image
-                        src="/assets/logo.png"
-                        alt="Arunayoga"
-                        width={52}
-                        height={52}
-                        className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
-                    />
-                    <div className="hidden sm:block">
-                        <p className="text-xl sm:text-2xl leading-tight font-bold font-primary text-primary">Arunayoga</p>
-                        <p className="text-[10px] sm:text-[13px] text-gray-500 font-medium whitespace-nowrap">Training & Research Institute</p>
-                    </div>
-                </Link>
+        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4">
+            <div className="max-w-7xl mx-auto px-8">
+                <div className={`bg-white rounded-3xl shadow-lg border-2 border-gray-100 transition-all duration-300 ${isScrolled ? "py-2 px-6" : "py-3 px-8"} flex items-center justify-between`}>
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center gap-3">
+                        <Image
+                            src="/assets/logo.png"
+                            alt="Arunayoga"
+                            width={52}
+                            height={52}
+                            className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+                        />
+                        <div className="hidden sm:block">
+                            <p className="text-xl sm:text-2xl leading-tight font-bold font-primary text-primary">ATRI</p>
+                            <p className="text-[10px] sm:text-[13px] text-gray-500 font-medium whitespace-nowrap">
+                                Arunayoga Training & Research Institute
+                            </p>
+                        </div>
+                    </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden xl:flex items-center gap-5 xl:gap-8 flex-1 justify-center">
+                <nav className="hidden xl:flex items-center gap-5 xl:gap-8 flex-1 justify-end">
                     {navItems.map((item) => (
                         <div key={item.name} className="relative group">
                             <Link
@@ -105,10 +103,10 @@ export default function Header() {
                 </nav>
 
                 {/* Utilities & CTA */}
-                <div className="hidden lg:flex items-center">
-                    <Link href="/contact?subject=demo">
+                <div className="hidden lg:flex items-center ml-4">
+                    <Link href="/contact">
                         <Button className="bg-primary hover:bg-[#e00000] text-white font-semibold rounded-lg px-7 h-[46px] text-[15px] shadow-sm tracking-wide">
-                            Book Demo
+                            Book to Heal
                         </Button>
                     </Link>
                 </div>
@@ -120,6 +118,7 @@ export default function Header() {
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
                 </button>
+                </div>
             </div>
 
             {/* Mobile Navigation Overlay */}
@@ -162,8 +161,8 @@ export default function Header() {
                                     <Phone className="w-4 h-4" />
                                     <span>+91 9440698003</span>
                                 </div>
-                                <Link href="/contact?subject=demo" onClick={() => setIsMobileMenuOpen(false)}>
-                                    <Button className="w-full bg-primary hover:bg-primary/90">Book Demo Class</Button>
+                                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                    <Button className="w-full bg-primary hover:bg-primary/90">Book to Heal</Button>
                                 </Link>
                             </div>
                         </div>

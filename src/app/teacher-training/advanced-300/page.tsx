@@ -5,9 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Check, Clock, MapPin, Users, Award } from "lucide-react";
-import logoImage from "@/assets/logo.png";
-import yogaAllianceImage from "@/assets/download.png";
-import affiliationImage from "@/assets/affiliation.jpg";
+import CollageBackground from "@/components/teacher-training/CollageBackground";
 
 const curriculum = [
     "Advanced Anatomy & Physiology",
@@ -30,15 +28,15 @@ export default function Advanced300Page() {
             <main className="pt-20">
                 {/* Hero Section */}
                 <section className="relative min-h-[60vh] flex items-center bg-brand-dark-grey text-white overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <Image
-                            src="/assets/community-2.jpg"
-                            alt="Advanced Yoga Teacher Training"
-                            fill
-                            className="object-cover opacity-40"
-                        />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-0" />
+                    <CollageBackground 
+                        images={[
+                            "/Classes/Asana Practice - 4.png",
+                            "/Classes/Pranayama - 5.png",
+                            "/Classes/Asana Practice - 6.png"
+                        ]}
+                        opacity={0.3}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-10" />
 
                     <div className="container mx-auto px-4 relative z-10">
                         <motion.div
@@ -144,13 +142,13 @@ export default function Advanced300Page() {
                                 </p>
                                 <div className="flex flex-wrap justify-center items-center gap-12">
                                     <div className="relative w-40 h-32">
-                                        <Image src={logoImage} alt="Arunayoga" fill className="object-contain" />
+                                        <Image src="/assets/logo.png" alt="Arunayoga" fill className="object-contain" />
                                     </div>
                                     <div className="relative w-40 h-32">
-                                        <Image src={yogaAllianceImage} alt="Yoga Alliance USA" fill className="object-contain" />
+                                        <Image src="/assets/download.png" alt="Yoga Alliance USA" fill className="object-contain" />
                                     </div>
                                     <div className="relative w-40 h-32">
-                                        <Image src={affiliationImage} alt="Annamalai University" fill className="object-contain" />
+                                        <Image src="/assets/affiliation.jpg" alt="Annamalai University" fill className="object-contain" />
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +161,7 @@ export default function Advanced300Page() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-3xl font-bold font-primary mb-4">Ready to Advance Your Teaching?</h2>
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Contact us for detailed pricing and upcoming batch dates.
+                            Contact us for upcoming batch dates.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/contact?subject=advanced-300">

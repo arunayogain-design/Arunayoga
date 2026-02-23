@@ -1,13 +1,176 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Leaf, Droplets, Eye, Brain, Activity, Heart, Wind, Flower2 } from "lucide-react";
-import treatmentsImage from "@/assets/IMG_0872.jpg";
 
-const treatments = [
+// Interactive Therapy Selector Component
+function TherapySelector({ treatments }: { treatments: typeof treatmentsData }) {
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    useEffect(() => {
+        const id = window.setInterval(() => {
+            setSelectedIndex((prev) => (prev + 1) % treatments.length);
+        }, 4500);
+
+        return () => {
+            window.clearInterval(id);
+        };
+    }, [treatments.length]);
+
+    return (
+        <section className="py-20 bg-gray-50 overflow-hidden">
+            <div className="container mx-auto px-4 max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl lg:text-4xl font-bold font-primary text-brand-dark-grey mb-4">
+                        Discover Our Healing Therapies
+                    </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        Ancient ayurvedic techniques to balance your body, mind, and spirit.
+                    </p>
+                </div>
+
+                <div className="relative min-h-[600px] flex items-center justify-between gap-8">
+                    {/* Left Semi-Circle - Therapy Circles */}
+                    <div className="relative w-1/2 h-[600px]">
+                        {treatments.map((treatment, idx) => {
+                            // C-shape arc (left side). This draws ~220° arc (open to the right).
+                            const totalItems = treatments.length;
+                            const angleStart = 70;
+                            const angleEnd = 290;
+                            const angle = angleStart + (idx / (totalItems - 1)) * (angleEnd - angleStart);
+                            const radius = 240;
+                            const centerX = 130;
+                            const centerY = 300;
+                            const x = Math.cos((angle * Math.PI) / 180) * radius + centerX;
+                            const y = Math.sin((angle * Math.PI) / 180) * radius + centerY;
+
+                            const isSelected = idx === selectedIndex;
+
+                            return (
+                                <motion.button
+                                    key={idx}
+                                    onClick={() => setSelectedIndex(idx)}
+                                    className="absolute cursor-pointer"
+                                    style={{
+                                        left: `${x}px`,
+                                        top: `${y}px`,
+                                        transform: 'translate(-50%, -50%)'
+                                    }}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ 
+                                        opacity: 1, 
+                                        scale: isSelected ? 1.2 : 1,
+                                        x: isSelected ? 28 : 0,
+                                        zIndex: isSelected ? 20 : 10
+                                    }}
+                                    whileHover={{ scale: isSelected ? 1.2 : 1.1 }}
+                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                >
+                                    <div className={`relative ${isSelected ? 'w-24 h-24' : 'w-20 h-20'} transition-all duration-300`}>
+                                        <div className={`absolute inset-0 rounded-full overflow-hidden border-4 ${isSelected ? 'border-primary shadow-2xl' : 'border-white shadow-lg'}`}>
+                                            <Image
+                                                src={treatment.image}
+                                                alt={treatment.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                            <div className={`absolute inset-0 ${isSelected ? 'bg-primary/20' : 'bg-black/40'} transition-all`} />
+                                        </div>
+                                        <div className={`absolute inset-0 flex items-center justify-center ${treatment.color} rounded-full`}>
+                                            <treatment.icon className={`${isSelected ? 'w-10 h-10' : 'w-8 h-8'} transition-all`} />
+                                        </div>
+                                    </div>
+                                </motion.button>
+                            );
+                        })}
+                    </div>
+
+                    {/* Right Side - Selected Therapy Display */}
+                    <div className="w-1/2">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={selectedIndex}
+                                initial={{ opacity: 0, x: 100, scale: 0.8 }}
+                                animate={{ opacity: 1, x: 0, scale: 1 }}
+                                exit={{ opacity: 0, x: -100, scale: 0.8 }}
+                                transition={{ duration: 0.5 }}
+                                className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-gray-100"
+                            >
+                                {/* Large Image */}
+                                <div className="relative h-80 overflow-hidden">
+                                    <Image
+                                        src={treatments[selectedIndex].image}
+                                        alt={treatments[selectedIndex].title}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                                    
+                                    {/* Icon Overlay */}
+                                    <div className="absolute top-6 right-6">
+                                        <div className={`w-20 h-20 ${treatments[selectedIndex].color} rounded-full flex items-center justify-center shadow-xl`}>
+                                            {(() => {
+                                                const IconComponent = treatments[selectedIndex].icon;
+                                                return <IconComponent className="w-10 h-10" />;
+                                            })()}
+                                        </div>
+                                    </div>
+
+                                    {/* Title Overlay */}
+                                    <div className="absolute bottom-6 left-6 right-6">
+                                        <h3 className="text-3xl font-bold font-primary text-white mb-2">
+                                            {treatments[selectedIndex].title}
+                                        </h3>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="p-8">
+                                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                                        {treatments[selectedIndex].description}
+                                    </p>
+
+                                    <h4 className="font-bold text-gray-900 text-lg mb-4 uppercase tracking-wide border-b-2 border-primary pb-2 inline-block">
+                                        Benefits:
+                                    </h4>
+                                    <ul className="space-y-3">
+                                        {treatments[selectedIndex].benefits.map((benefit, i) => (
+                                            <li key={i} className="flex items-start gap-3 text-gray-700">
+                                                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                                                <span className="text-base">{benefit}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {/* Navigation Dots */}
+                                    <div className="flex justify-center gap-2 mt-8 pt-6 border-t border-gray-200">
+                                        {treatments.map((_, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setSelectedIndex(idx)}
+                                                className={`w-3 h-3 rounded-full transition-all ${
+                                                    idx === selectedIndex 
+                                                        ? 'bg-primary w-8' 
+                                                        : 'bg-gray-300 hover:bg-gray-400'
+                                                }`}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+const treatmentsData = [
     {
         title: "Ayurvedic Body Massage – Abhyanga/Udvartana",
         description: "An ancient Indian Ayurvedic massage therapy for healing and detoxifying Body, Mind, and Spirit. Performed using herbal oils and powders.",
@@ -20,7 +183,8 @@ const treatments = [
         ],
         icon: Leaf,
         color: "text-brand-green bg-brand-green/10",
-        border: "border-brand-green"
+        border: "border-brand-green",
+        image: "/assets/ayurvedic-treatment-1.jpg"
     },
     {
         title: "Healing Marma Point Massage",
@@ -34,7 +198,8 @@ const treatments = [
         ],
         icon: Activity,
         color: "text-brand-light-blue bg-brand-light-blue/10",
-        border: "border-brand-light-blue"
+        border: "border-brand-light-blue",
+        image: "/assets/healing-point-massage.jpg"
     },
     {
         title: "Lower Back Treatment - Kati Vasti",
@@ -47,7 +212,8 @@ const treatments = [
         ],
         icon: Heart,
         color: "text-primary bg-primary/10",
-        border: "border-primary"
+        border: "border-primary",
+        image: "/assets/lower-back-treatment.jpg"
     },
     {
         title: "Upper Back Treatment - Greeva Vasti",
@@ -59,7 +225,8 @@ const treatments = [
         ],
         icon: Brain,
         color: "text-brand-blue bg-brand-blue/10",
-        border: "border-brand-blue"
+        border: "border-brand-blue",
+        image: "/assets/upper-back-treatment.jpg"
     },
     {
         title: "Knee Support & Rejuvenation - Janu Vasti",
@@ -70,7 +237,8 @@ const treatments = [
         ],
         icon: Droplets,
         color: "text-secondary bg-secondary/10",
-        border: "border-secondary"
+        border: "border-secondary",
+        image: "/assets/knee-support.jpg"
     },
     {
         title: "Digestion Improvement - Nabhi Vasti",
@@ -82,7 +250,8 @@ const treatments = [
         ],
         icon: Wind,
         color: "text-accent bg-accent/10",
-        border: "border-accent"
+        border: "border-accent",
+        image: "/assets/digestion-improvement.jpg"
     },
     {
         title: "Eye Relaxation - Netra Vasti",
@@ -95,7 +264,8 @@ const treatments = [
         ],
         icon: Eye,
         color: "text-brand-green-2 bg-brand-green-2/10",
-        border: "border-brand-green-2"
+        border: "border-brand-green-2",
+        image: "/assets/eye-relaxation-treatment.jpg"
     },
     {
         title: "Navarakidi",
@@ -108,7 +278,8 @@ const treatments = [
         ],
         icon: Flower2,
         color: "text-brand-dark-grey bg-brand-dark-grey/10",
-        border: "border-brand-dark-grey"
+        border: "border-brand-dark-grey",
+        image: "/assets/navarakidi.jpg"
     }
 ];
 
@@ -120,8 +291,8 @@ export default function TreatmentsPage() {
                 <section className="relative min-h-[50vh] flex items-center bg-brand-dark-grey text-white overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <Image
-                            src={treatmentsImage}
-                            alt="Ayurvedic Treatments"
+                            src="/assets/IMG_0872.jpg"
+                            alt="Ayurvedic Therapy"
                             fill
                             className="object-cover opacity-30"
                             priority
@@ -141,7 +312,7 @@ export default function TreatmentsPage() {
                                 Holistic Healing
                             </span>
                             <h1 className="text-4xl lg:text-6xl font-bold font-primary mb-6 text-white">
-                                Ayurvedic Treatments
+                                Ayurvedic Therapy
                             </h1>
                             <p className="text-xl text-gray-200 leading-relaxed">
                                 Arunayoga helps you in prevention and cure with natural therapies that include:
@@ -204,51 +375,9 @@ export default function TreatmentsPage() {
                     </div>
                 </section>
 
-                {/* Treatment Grid */}
-                <section className="py-20 bg-gray-50">
-                    <div className="container mx-auto px-4 max-w-7xl">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl lg:text-4xl font-bold font-primary text-brand-dark-grey mb-4">
-                                Discover Our Healing Therapies
-                            </h2>
-                            <p className="text-gray-600 max-w-2xl mx-auto">
-                                Ancient ayurvedic techniques to balance your body, mind, and spirit.
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {treatments.map((treatment, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: (idx % 3) * 0.1 }}
-                                    className={`bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border-t-4 ${treatment.border}`}
-                                >
-                                    <div className={`w-14 h-14 ${treatment.color} rounded-xl flex items-center justify-center mb-6`}>
-                                        <treatment.icon className="w-7 h-7" />
-                                    </div>
-                                    <h3 className="text-xl font-bold font-primary text-brand-dark-grey mb-3">
-                                        {treatment.title}
-                                    </h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                        {treatment.description}
-                                    </p>
-                                    <h4 className="font-semibold text-gray-800 text-sm mb-3 uppercase tracking-wider">Benefits:</h4>
-                                    <ul className="space-y-2">
-                                        {treatment.benefits.map((benefit, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                                                <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mt-1.5 flex-shrink-0" />
-                                                {benefit}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* Interactive Therapy Selector - Left Semi-Circle */}
+                <TherapySelector treatments={treatmentsData} />
+                
 
                 {/* Wellness Packages CTA */}
                 <section className="py-20 bg-white">
@@ -283,6 +412,43 @@ export default function TreatmentsPage() {
                                     </Button>
                                 </Link>
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Cross-References to Other Wellness Programs */}
+                <section className="py-16 bg-white border-t-2 border-black">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-3xl font-bold font-primary text-center text-gray-900 mb-12">
+                            Explore Our Other Wellness Programs
+                        </h2>
+                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <Link href="/wellness/detox" className="group">
+                                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-purple-200 hover:border-purple-400">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                        Ayurvedic Detox
+                                    </h3>
+                                    <p className="text-gray-700 mb-4">
+                                        Purify Body, Mind & Heart with our specialized 1, 3, or 5-day detox programs combining yoga and Ayurveda.
+                                    </p>
+                                    <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                        Learn More →
+                                    </span>
+                                </div>
+                            </Link>
+                            <Link href="/wellness/stress-relief" className="group">
+                                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-blue-200 hover:border-blue-400">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                        Ayurvedic Stress-Relief
+                                    </h3>
+                                    <p className="text-gray-700 mb-4">
+                                        Become peaceful in mind & heart. Treat anxiety, insomnia, and fatigue naturally with specialized therapies.
+                                    </p>
+                                    <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                        Explore Program →
+                                    </span>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </section>

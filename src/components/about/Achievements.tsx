@@ -1,46 +1,42 @@
 "use client";
 
-import { Award, BookOpen, Tv, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import arunadeviOne from "@/assets/arunadevi-1.jpg";
-import communityOne from "@/assets/community-1.jpeg";
-import communityTwo from "@/assets/community-2.jpg";
-import arunadeviThree from "@/assets/arunadevi-3.jpg";
+import { Award } from "lucide-react";
 
 const achievements = [
     {
-        title: "State Government Recognition",
-        description: "Honored by Chief Minister for outstanding contribution to Yoga",
-        image: arunadeviOne,
+        title: "Recognition & Honors",
+        category: "Awards",
+        image: "/assets/Achievements-1.jpg",
     },
     {
-        title: "National Awards",
-        description: "Multiple awards for excellence in Yoga education and practice",
-        image: communityOne,
+        title: "Achievements",
+        category: "Recognition",
+        image: "/assets/Achievements-2.jpg",
     },
     {
-        title: "Community Leadership",
-        description: "Recognized for transforming lives through Yoga therapy",
-        image: communityTwo,
+        title: "Awards & Milestones",
+        category: "Honors",
+        image: "/assets/Achievements-3.jpg",
     },
     {
-        title: "Wonder Book of Records",
-        description: "Record holder for longest headstand and mass yoga events",
-        image: arunadeviThree,
+        title: "Recognition Events",
+        category: "Events",
+        image: "/assets/Achievements-4.jpg",
     },
-];
-
-const stats = [
-    { icon: Award, label: "Awards Won", value: "15+" },
-    { icon: BookOpen, label: "Books Published", value: "3" },
-    { icon: Tv, label: "TV Appearances", value: "50+" },
-    { icon: Star, label: "Records Held", value: "5" },
+    {
+        title: "Celebrations",
+        category: "Community",
+        image: "/assets/Achievements-5.jpg",
+    },
 ];
 
 export default function Achievements() {
+    const stripItems = [...achievements, ...achievements];
+
     return (
-        <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <motion.span
@@ -71,57 +67,40 @@ export default function Achievements() {
                     </motion.p>
                 </div>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-                    {stats.map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-all hover:-translate-y-1"
-                        >
-                            <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
-                                <stat.icon className="w-6 h-6" />
+                <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent z-10 pointer-events-none" />
+                    <motion.div
+                        className="flex gap-8 py-10 px-6"
+                        initial={{ x: 0 }}
+                        animate={{ x: "-50%" }}
+                        transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+                    >
+                        {stripItems.map((item, index) => (
+                            <div
+                                key={`${item.title}-${index}`}
+                                className="flex-shrink-0 w-[240px] sm:w-[280px]"
+                            >
+                                <div className="relative h-[170px] rounded-xl overflow-hidden shadow-sm bg-white">
+                                    <Image
+                                        key={item.image}
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover"
+                                        unoptimized
+                                    />
+                                </div>
+                                <div className="mt-4 flex items-center justify-between gap-3">
+                                    <div className="min-w-0">
+                                        <div className="text-sm font-semibold text-gray-900 truncate">{item.title}</div>
+                                        <div className="text-xs text-gray-500 truncate">{item.category}</div>
+                                    </div>
+                                    <Award className="w-5 h-5 text-primary flex-shrink-0" />
+                                </div>
                             </div>
-                            <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                            <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Achievement Gallery */}
-                <div className="grid md:grid-cols-2 gap-8">
-                    {achievements.map((achievement, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.15 }}
-                            viewport={{ once: true }}
-                            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                        >
-                            <div className="relative h-80 overflow-hidden">
-                                <Image
-                                    src={achievement.image}
-                                    alt={achievement.title}
-                                    fill
-                                    priority
-                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                            </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                <h3 className="text-2xl font-bold font-primary mb-2">
-                                    {achievement.title}
-                                </h3>
-                                <p className="text-gray-200 text-sm leading-relaxed">
-                                    {achievement.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </section>

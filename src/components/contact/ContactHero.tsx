@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import contactHeroImage from "@/assets/arunadevi-1.jpg";
 
 export default function ContactHero() {
     return (
         <section className="relative py-32 bg-brand-dark-grey text-white overflow-hidden">
             <div
                 className="absolute inset-0 bg-cover bg-fixed bg-center z-0"
-                style={{ backgroundImage: `url(${contactHeroImage.src})` }}
+                style={{ backgroundImage: `url(/assets/arunadevi-1.jpg)` }}
             />
             <div className="absolute inset-0 bg-black/65 z-0" />
 

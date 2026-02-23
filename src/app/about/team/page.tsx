@@ -3,20 +3,19 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Star, UserCircle2, Leaf } from "lucide-react";
-import founderImage from "@/assets/Yoga-Guru-Arunadevi_1.jpg";
 
 const teamData = {
     leadership: [
         {
             name: "Yoga Guru Arunadevi",
             role: "Founder, Director & Chief Trainer",
-            image: founderImage,
+            image: "/assets/Yoga-Guru-Arunadevi_1.jpg",
             speciality: "Yogic Philosophy, Advanced Training, Therapy",
         },
         {
             name: "Srinivas Vempa",
             role: "Lead Trainer (RYT500)",
-            image: null,
+            image: "/assets/community-2.jpg",
             speciality: "Teacher Training, Gentle yoga, Advanced Yoga",
         }
     ],
@@ -155,12 +154,12 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Treatments: Ayurveda, Naturopathy, Homeopathy */}
+            {/* Therapy: Ayurveda, Naturopathy, Homeopathy */}
             <section className="bg-white py-20 border-t border-gray-100 mt-20">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold font-primary text-brand-dark-grey mb-4">
-                            Wellness & Treatments Team
+                            Wellness & Therapy Team
                         </h2>
                         <div className="w-20 h-1 bg-brand-green mx-auto rounded-full" />
                     </div>

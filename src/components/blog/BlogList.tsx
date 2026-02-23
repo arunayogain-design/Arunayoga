@@ -20,9 +20,6 @@ export default function BlogList({ limit, showHeader = true }: BlogListProps) {
             <div className="container mx-auto px-4">
                 {showHeader ? (
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl lg:text-4xl font-bold font-primary text-secondary mb-4">
-                            Recent Blog Posts:
-                        </h2>
                         <p className="text-text max-w-2xl mx-auto">
                             Authentic insights on yoga practice, ayurveda, pranayama, and traditional healing.
                         </p>

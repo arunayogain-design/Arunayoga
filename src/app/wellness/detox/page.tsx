@@ -78,7 +78,7 @@ export default function DetoxPage() {
                         <p className="text-xl text-brand-green-100 mb-8 leading-relaxed max-w-2xl">
                             When the physical and mental body are cleaned up, we can start to feel the spiritual body,
                             our center of real happiness. This detox program combines physical and mental cleaning through
-                            Ayurvedic Detox treatments, Yoga, Pranayama, and Meditation.
+                            Ayurvedic Detox therapy, Yoga, Pranayama, and Meditation.
                         </p>
                         <div className="flex gap-4">
                             <Link href="/contact?subject=detox-booking">
@@ -124,11 +124,11 @@ export default function DetoxPage() {
                 </div>
             </section>
 
-            {/* Split Section: Treatments & Benefits */}
+            {/* Split Section: Therapy & Benefits */}
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-16">
-                        {/* Treatments */}
+                        {/* Therapy */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -136,15 +136,15 @@ export default function DetoxPage() {
                         >
                             <h2 className="text-3xl font-bold font-primary text-brand-dark-grey mb-6 flex items-center gap-3">
                                 <Droplets className="w-8 h-8 text-brand-light-blue" />
-                                Detox Treatments May Include
+                                Detox Therapy May Include
                             </h2>
                             <ul className="space-y-4">
                                 {[
                                     "Intake session and daily guidance by our Qualified Ayurvedic Therapist",
                                     "Fasting with juices, fruit snacks, sweet potato and soup",
                                     "Colon Cleansing",
-                                    "Mud pack (Ayurvedic treatment to detox and stimulate the digestive fire)",
-                                    "Lower or Upper Back Basti (Ayurvedic oil treatment)",
+                                    "Mud pack (Ayurvedic therapy to detox and stimulate the digestive fire)",
+                                    "Lower or Upper Back Basti (Ayurvedic oil therapy)",
                                     "Ayurvedic massage"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
@@ -257,6 +257,43 @@ export default function DetoxPage() {
                             <div><strong className="text-white block mb-1">Jun - Aug:</strong> Light summer clothes, light raincoat, umbrella.</div>
                             <div><strong className="text-white block mb-1">Sep - Nov:</strong> Light clothes for day, warm shawl/vest for morning/evening.</div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Cross-References to Other Wellness Programs */}
+            <section className="py-16 bg-white border-t-2 border-black">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold font-primary text-center text-gray-900 mb-12">
+                        Explore Our Other Wellness Programs
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <Link href="/wellness/stress-relief" className="group">
+                            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-blue-200 hover:border-blue-400">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                    Ayurvedic Stress-Relief
+                                </h3>
+                                <p className="text-gray-700 mb-4">
+                                    Become peaceful in mind & heart. Treat anxiety, insomnia, and fatigue naturally with specialized therapies.
+                                </p>
+                                <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                    Learn More →
+                                </span>
+                            </div>
+                        </Link>
+                        <Link href="/wellness/treatments" className="group">
+                            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-400">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                    Ayurvedic Therapy
+                                </h3>
+                                <p className="text-gray-700 mb-4">
+                                    Experience authentic Ayurvedic therapies including Shirodhara, Kati Vasti, and various healing treatments.
+                                </p>
+                                <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                    Explore Therapies →
+                                </span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </section>

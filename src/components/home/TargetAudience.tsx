@@ -9,21 +9,21 @@ const audiences = [
     {
         icon: User,
         title: "New to Yoga",
-        text: "Personalized guidance to help you start your yoga journey confidently.",
+        text: "<strong>Personalized guidance</strong> to help you start your yoga journey confidently.",
         cta: "Get Started",
         href: "/contact?subject=demo",
     },
     {
         icon: Activity,
         title: "Advanced Yoga",
-        text: "Enhance your practice with advanced techniques including Mudra and Pranayama.",
+        text: "Enhance your practice with <strong>advanced techniques</strong> including Mudra and Pranayama.",
         cta: "View Programs",
         href: "/classes",
     },
     {
         icon: GraduationCap,
         title: "Yoga Teacher Training",
-        text: "Diploma & certification courses to become a skilled and certified yoga instructor.",
+        text: "Diploma & certification courses to become a skilled and <strong>certified yoga instructor</strong>.",
         cta: "Explore Courses",
         href: "/teacher-training",
     },
@@ -36,9 +36,9 @@ const audiences = [
     },
     {
         icon: Heart,
-        title: "Holistic Treatments",
-        text: "Ayurvedic & natural therapies for stress detoxification, and healing.",
-        cta: "View Treatments",
+        title: "Holistic Therapy",
+        text: "Ayurvedic & natural therapies for stress detoxification, and <strong>holistic healing</strong>.",
+        cta: "View Therapy",
         href: "/wellness",
     },
 ];
@@ -87,9 +87,7 @@ export default function TargetAudience() {
                                 <item.icon className="w-9 h-9 stroke-[1.5]" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-800 mb-3 tracking-wide">{item.title}</h3>
-                            <p className="text-gray-500 mb-8 flex-grow text-[14px] leading-relaxed px-1 font-light">
-                                {item.text}
-                            </p>
+                            <p className="text-gray-500 mb-8 flex-grow text-[14px] leading-relaxed px-1 font-light" dangerouslySetInnerHTML={{ __html: item.text }} />
                             <Link href={item.href} className="w-full mt-auto">
                                 <Button size="sm" className="w-full bg-primary hover:bg-[#E74C3C] text-white rounded-xl py-[22px] shadow-[0_4px_14px_rgba(255,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(255,0,0,0.3)] hover:-translate-y-[1px] text-[15px] font-semibold transition-all duration-300">
                                     {item.cta}

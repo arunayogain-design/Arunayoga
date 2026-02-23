@@ -86,11 +86,11 @@ export default function StressReliefPage() {
                 </div>
             </section>
 
-            {/* Split Section: Treatments & Benefits */}
+            {/* Split Section: Therapy & Benefits */}
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="grid lg:grid-cols-2 gap-16">
-                        {/* Weekly Treatments */}
+                        {/* Weekly Therapy */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -98,13 +98,13 @@ export default function StressReliefPage() {
                         >
                             <h2 className="text-3xl font-bold font-primary text-brand-dark-grey mb-6 flex items-center gap-3">
                                 <Smile className="w-8 h-8 text-brand-light-blue" />
-                                Weekly Treatments May Include
+                                Weekly Therapy May Include
                             </h2>
                             <ul className="space-y-4">
                                 {[
                                     "Intake session and daily guidance by our Qualified Ayurvedic Therapist",
                                     "Yoga Therapy class (Mon - Fri: mix of asanas, breathing techniques & yoga nidra)",
-                                    "Basti (Healing Ayurvedic Oil Treatments)",
+                                    "Basti (Healing Ayurvedic Oil Therapies)",
                                     "Ayurvedic massage with herbal oil to remove stress from muscles",
                                     "Healing massage",
                                     "Shirodhara treatment (steady flow of warm oil for mental clarity)"
@@ -214,6 +214,42 @@ export default function StressReliefPage() {
                             <div><strong className="text-white block mb-1">Jun - Aug:</strong> Light summer clothes, light raincoat, umbrella.</div>
                             <div><strong className="text-white block mb-1">Sep - Nov:</strong> Light clothes for day, warm shawl/vest for morning/evening.</div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            {/* Cross-References to Other Wellness Programs */}
+            <section className="py-16 bg-white border-t-2 border-black">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold font-primary text-center text-gray-900 mb-12">
+                        Explore Our Other Wellness Programs
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <Link href="/wellness/detox" className="group">
+                            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-purple-200 hover:border-purple-400">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                    Ayurvedic Detox
+                                </h3>
+                                <p className="text-gray-700 mb-4">
+                                    Purify Body, Mind & Heart with our specialized 1, 3, or 5-day detox programs combining yoga and Ayurveda.
+                                </p>
+                                <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                    Learn More →
+                                </span>
+                            </div>
+                        </Link>
+                        <Link href="/wellness/treatments" className="group">
+                            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-all border-2 border-green-200 hover:border-green-400">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                                    Ayurvedic Therapy
+                                </h3>
+                                <p className="text-gray-700 mb-4">
+                                    Experience authentic Ayurvedic therapies including Shirodhara, Kati Vasti, and various healing treatments.
+                                </p>
+                                <span className="inline-flex items-center text-primary font-semibold group-hover:gap-2 transition-all">
+                                    Explore Therapies →
+                                </span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </section>

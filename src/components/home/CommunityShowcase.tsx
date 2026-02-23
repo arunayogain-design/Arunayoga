@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Users, Heart, Globe } from "lucide-react";
 import { Button } from "../ui/button";
-import classesImage from "@/assets/classes-1.jpg";
-import campusImage from "@/assets/IMG_0872.jpg";
-import trainingImage from "@/assets/community-1.jpeg";
 
 export default function CommunityShowcase() {
     return (
@@ -25,7 +22,7 @@ export default function CommunityShowcase() {
                         className="relative h-[400px] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] group isolate hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500"
                     >
                         <Image
-                            src={classesImage}
+                            src="/assets/classes-1.jpg"
                             alt="Yoga class in session"
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -49,7 +46,7 @@ export default function CommunityShowcase() {
                         className="relative h-[400px] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] group isolate hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500"
                     >
                         <Image
-                            src={campusImage}
+                            src="/assets/IMG_0872.jpg"
                             alt="Outdoor yoga session"
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -73,7 +70,7 @@ export default function CommunityShowcase() {
                         className="relative h-[400px] rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] group isolate hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-shadow duration-500"
                     >
                         <Image
-                            src={trainingImage}
+                            src="/assets/community-1.jpeg"
                             alt="Teacher training program"
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -121,7 +118,7 @@ export default function CommunityShowcase() {
                         <div className="w-20 h-20 bg-[#FFF5F5] group-hover:bg-[#FFEBEB] rounded-2xl flex items-center justify-center mb-6 text-primary shadow-sm transition-all duration-300">
                             <Users className="w-9 h-9 stroke-[1.5]" />
                         </div>
-                        <div className="text-[42px] font-bold text-primary mb-2 font-primary">2000+</div>
+                        <div className="text-[42px] font-bold text-primary mb-2 font-primary">35000+</div>
                         <div className="text-gray-500 font-medium text-[16px] tracking-wide">Certified Teachers</div>
                     </div>
 

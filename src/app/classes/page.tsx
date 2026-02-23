@@ -2,7 +2,6 @@ import ClassesHero from "@/components/classes/ClassesHero";
 import ClassesGrid from "@/components/classes/ClassesGrid";
 import ClassComponents from "@/components/classes/ClassComponents";
 import Schedule from "@/components/classes/Schedule";
-import Pricing from "@/components/classes/Pricing";
 import DemoCta from "@/components/classes/DemoCta";
 
 export const metadata = {
@@ -17,7 +16,6 @@ export default function ClassesPage() {
             <ClassesGrid />
             <ClassComponents />
             <Schedule />
-            <Pricing />
             <DemoCta />
         </main>
     );

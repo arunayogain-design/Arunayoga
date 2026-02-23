@@ -23,7 +23,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href="/wellness" className="text-gray-300 hover:text-primary transition-colors">
-                                    Ayurvedic Treatments
+                                    Ayurvedic Therapy
                                 </Link>
                             </li>
                             <li>
@@ -63,10 +63,11 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-primary mt-1" />
                                 <span className="text-gray-300">
-                                    Arunayoga Training Institute<br />
-                                    Park #7, Rd Number 44<br />
-                                    Kavuri Hills, Madhapur<br />
-                                    Hyderabad, Telangana 500033
+                                    <span className="text-primary font-semibold">ATRI</span><br />
+                                    8-3, 833/13A, Kundan Marble Ln<br />
+                                    Sagar Society, Sri Nagar Colony<br />
+                                    Aurora Colony, Banjara Hills<br />
+                                    Hyderabad, Telangana 500073.
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
@@ -103,13 +104,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-400 text-sm">
-                        © 2024 Arunayoga Training and Research Institute. All Rights Reserved.
-                    </p>
-                    <div className="flex gap-6 text-2xl">
-                        🧘
-                    </div>
+                <div className="border-t border-white/10 pt-8">
                 </div>
             </div>
         </footer>

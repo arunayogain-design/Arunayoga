@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Tv, Radio, Newspaper, Users } from "lucide-react";
+import { Tv, Radio, Users } from "lucide-react";
 
 const mediaItems = [
     {
@@ -27,6 +27,13 @@ const mediaItems = [
         category: "Youth Programs",
     },
     {
+        title: "Newspaper Features",
+        description: "Highlighting our wellness initiatives and community outreach",
+        image: "/assets/newspaper-yoga.png",
+        icon: Users,
+        category: "Print Media",
+    },
+    {
         title: "Radio & Print Media",
         description: "Regular features in newspapers and radio health segments",
         image: "/assets/radio-yoga.png",
@@ -36,6 +43,8 @@ const mediaItems = [
 ];
 
 export default function MediaCoverage() {
+    const stripItems = [...mediaItems, ...mediaItems];
+
     return (
         <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
@@ -68,66 +77,48 @@ export default function MediaCoverage() {
                     </motion.p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                    {mediaItems.map((item, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-                        >
-                            <div className="relative h-72 overflow-hidden">
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-
-                                {/* Category Badge */}
-                                <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full">
-                                    <item.icon className="w-4 h-4 text-primary" />
-                                    <span className="text-sm font-semibold text-primary">{item.category}</span>
+                <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50">
+                    <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/70 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/70 to-transparent z-10 pointer-events-none" />
+                    <motion.div
+                        className="flex gap-8 py-10 px-6"
+                        initial={{ x: 0 }}
+                        animate={{ x: "-50%" }}
+                        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+                    >
+                        {stripItems.map((item, index) => (
+                            <div
+                                key={`${item.title}-${index}`}
+                                className="flex-shrink-0 w-[240px] sm:w-[280px]"
+                            >
+                                <div className="relative h-[160px] rounded-xl overflow-hidden shadow-sm bg-white">
+                                    <Image
+                                        key={item.image}
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover"
+                                        unoptimized
+                                    />
+                                </div>
+                                <div className="mt-4 flex items-center justify-between gap-3">
+                                    <div className="min-w-0">
+                                        <div className="text-sm font-semibold text-gray-900 truncate">{item.title}</div>
+                                        <div className="text-xs text-gray-500 truncate">{item.category}</div>
+                                    </div>
+                                    <item.icon className="w-5 h-5 text-primary flex-shrink-0" />
                                 </div>
                             </div>
-
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                <h3 className="text-2xl font-bold font-primary mb-2">
-                                    {item.title}
-                                </h3>
-                                <p className="text-gray-200 text-sm leading-relaxed">
-                                    {item.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </motion.div>
                 </div>
 
-                {/* Stats Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-16 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white"
-                >
-                    <div className="grid md:grid-cols-3 gap-8 text-center">
-                        <div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-                            <div className="text-white/90">TV Appearances</div>
-                        </div>
-                        <div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">100+</div>
-                            <div className="text-white/90">Media Features</div>
-                        </div>
-                        <div>
-                            <div className="text-4xl md:text-5xl font-bold mb-2">30+</div>
-                            <div className="text-white/90">Years in Media</div>
-                        </div>
+                <div className="mt-10 text-center">
+                    <div className="inline-flex items-center gap-3 rounded-full bg-primary/10 px-6 py-3">
+                        <Tv className="w-5 h-5 text-primary" />
+                        <span className="text-primary font-semibold">300+ Media coverages and TV Features</span>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

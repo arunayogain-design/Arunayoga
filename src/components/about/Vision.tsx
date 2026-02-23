@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import visionImage from "@/assets/arunadevi-3.jpg";
 
 export default function Vision() {
     return (
         <section className="relative py-24 bg-brand-dark-grey text-white overflow-hidden">
             <Image
-                src={visionImage}
+                src="/assets/arunadevi-3.jpg"
                 alt="Arunayoga vision"
                 fill
                 className="object-cover"
@@ -46,9 +45,9 @@ export default function Vision() {
                 {/* Impact Stats */}
                 <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
-                        { label: "Teachers Trained", value: "2000+" },
+                        { label: "Teachers Trained", value: "35000+" },
                         { label: "Countries Reached", value: "13+" },
-                        { label: "Years of Service", value: "30+" },
+                        { label: "Years of Service", value: "35+" },
                         { label: "Lives Transformed", value: "1000s" }
                     ].map((stat, idx) => (
                         <motion.div

@@ -11,9 +11,12 @@ export default function AboutPreview() {
         <section className="py-20 overflow-hidden bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-4xl font-bold font-primary text-text mb-3">
-                        Arunayoga Training and Research Institute
-                    </h2>
+                    <div className="mb-3">
+                        <h2 className="text-3xl md:text-4xl font-bold font-primary text-primary">ATRI</h2>
+                        <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mt-2">
+                            Arunayoga Training & Research Institute
+                        </p>
+                    </div>
                     <p className="text-2xl md:text-3xl font-primary text-primary">Build. Achieve.</p>
                 </div>
 
@@ -26,16 +29,16 @@ export default function AboutPreview() {
                         className="order-2 lg:order-1"
                     >
                         <h3 className="text-2xl lg:text-3xl font-primary font-bold text-text mb-5 leading-snug">
-                            Arunayoga Foundation led by Yoga Guru Arunadevi has trained over 2000 teachers since 1990.
+                            Arunayoga Foundation led by Yoga Guru Arunadevi has trained over <span className="text-primary font-bold">35000 teachers</span> since 1990.
                         </h3>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                            A veteran with over three decades of experience, wealth of knowledge and wisdom, she continues to guide students from India and around the world through authentic yoga practice.
+                            A veteran with over <span className="font-bold text-gray-800">35 years of experience</span>, wealth of knowledge and wisdom, she continues to guide students from India and around the world through <span className="font-bold text-gray-800">authentic yoga practice</span>.
                         </p>
 
                         <ul className="mb-8 space-y-3">
                             {[
-                                "30+ years of dedicated yoga teaching",
-                                "2000+ yoga teachers trained",
+                                "35+ years of dedicated yoga teaching",
+                                "35000+ yoga teachers trained",
                                 "Traditional Guru Parampara lineage",
                                 "Specialized therapeutic yoga guidance",
                             ].map((item, index) => (
@@ -98,7 +101,7 @@ export default function AboutPreview() {
                             Surrounded by lush greenery - a unique and serene place to practice yoga and meditation.
                         </h3>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            Our institute environment supports focused learning, mindful practice, and complete physical-mental rejuvenation through traditional yoga and wellness disciplines.
+                            Our institute environment supports focused learning, mindful practice, and <span className="font-bold text-gray-800">complete physical-mental rejuvenation</span> through <span className="font-bold text-gray-800">traditional yoga</span> and wellness disciplines.
                         </p>
                     </motion.div>
                 </div>

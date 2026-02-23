@@ -11,7 +11,6 @@ const courses = [
         subtitle: "200 Hours",
         desc: "Learn Asanas, Mudras, Bandhas, Pranayamas, Shatkriyas, Chanting, Mantras, relaxation techniques, Yoga Nidra, Meditation and traditional yoga techniques.",
         duration: "4 Weeks",
-        price: "INR 75,000 / USD 1,800",
         features: [
             "Teaching Methodology & Alignment",
             "Patanjali Yoga Sutras",
@@ -28,7 +27,6 @@ const courses = [
         subtitle: "300 Hours",
         desc: "For certified 200-hour teachers ready to deepen their practice. Advanced therapy techniques, anatomy, and Ayurveda fundamentals.",
         duration: "6 Weeks",
-        price: "Contact for Details",
         features: [
             "Advanced Anatomy & Physiology",
             "Yoga Therapy Techniques",
@@ -45,7 +43,6 @@ const courses = [
         subtitle: "500 Hours",
         desc: "The ultimate certification combining 200 and 300-hour curriculums. Become a master teacher with comprehensive knowledge and expertise.",
         duration: "10 Weeks",
-        price: "Contact for Details",
         features: [
             "Complete Mastery of Yoga",
             "Research & Thesis Work",
@@ -94,9 +91,6 @@ export default function CourseLevels() {
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         <span className="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold text-gray-700">
                                             Duration: {course.duration}
-                                        </span>
-                                        <span className="px-3 py-1 bg-primary/10 rounded-full text-xs font-bold text-primary">
-                                            {course.price}
                                         </span>
                                     </div>
                                 </div>

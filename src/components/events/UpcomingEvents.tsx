@@ -11,7 +11,6 @@ const events = [
         time: "9:00 AM - 1:00 PM",
         location: "Arunayoga Main Hall",
         description: "A comprehensive workshop focusing on balancing the seven chakras through specific asanas, pranayama, and meditation techniques.",
-        price: "₹1,500",
         image: "bg-red-100", // Placeholder color
         category: "Workshop"
     },
@@ -21,7 +20,6 @@ const events = [
         time: "Full Day",
         location: "Ananthagiri Hills",
         description: "Escape the city and rejuvenate with our signature detox retreat. Includes satvik diet, nature walks, and therapeutic yoga.",
-        price: "₹8,000",
         image: "bg-green-100",
         category: "Retreat"
     },
@@ -31,7 +29,6 @@ const events = [
         time: "6:00 AM - 8:00 AM",
         location: "Public Gardens, Hyderabad",
         description: "Join thousands of yogis in a mass yoga session to celebrate the spirit of unity and wellness.",
-        price: "Free",
         image: "bg-blue-100",
         category: "Community"
     }
@@ -80,8 +77,7 @@ export default function UpcomingEvents() {
                                 <p className="text-gray-600 mb-6 leading-relaxed">
                                     {event.description}
                                 </p>
-                                <div className="flex items-center justify-between mt-auto">
-                                    <span className="text-xl font-bold text-primary">{event.price}</span>
+                                <div className="flex items-center justify-end mt-auto">
                                     <Button variant="outline" className="group-hover:bg-primary group-hover:text-white transition-colors">
                                         Register Now <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>

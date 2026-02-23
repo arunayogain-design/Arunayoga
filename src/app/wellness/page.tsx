@@ -5,7 +5,7 @@ import WellnessTestimonials from "@/components/wellness/WellnessTestimonials";
 
 export const metadata = {
     title: "Ayurvedic Wellness | Arunayoga",
-    description: "Experience authentic Ayurvedic treatments and holistic healing therapies tailored to your unique constitution.",
+    description: "Experience authentic Ayurvedic therapy and holistic healing tailored to your unique constitution.",
 };
 
 export default function WellnessPage() {

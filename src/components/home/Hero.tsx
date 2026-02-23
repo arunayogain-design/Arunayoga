@@ -1,87 +1,78 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[90vh] w-full flex flex-col justify-center overflow-hidden">
-            {/* Background Image with Parallax */}
-            <div
-                className="absolute inset-0 bg-[url('/assets/classes-1.jpg')] bg-cover bg-fixed z-0"
-            >
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/30 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 container mx-auto px-4 text-white drop-shadow-md pt-20">
-                <div className="max-w-3xl">
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-lg md:text-xl lg:text-2xl mb-4 font-medium"
-                    >
-                        &quot;Yoga is not a religion. It is a science.&quot;
-                    </motion.p>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-primary leading-[1.1] drop-shadow-lg"
-                    >
-                        Arunayoga <br />
-                        Training & <br />
-                        Research Institute
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.35 }}
-                        className="text-xl lg:text-2xl mb-10 max-w-2xl font-light leading-relaxed"
-                    >
-                        Start your journey to a healthier and <br className="hidden md:block" />
-                        more balanced life.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="flex flex-col sm:flex-row gap-4 lg:justify-start items-center"
-                    >
-                        <Link href="/contact?subject=demo" className="w-full sm:w-auto">
-                            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-[#e00000] text-white text-lg h-14 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all">
-                                Book a Demo
-                            </Button>
-                        </Link>
-                        <Link href="/contact" className="w-full sm:w-auto">
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-black text-lg h-14 px-8 rounded-lg bg-transparent transition-all"
-                            >
-                                Contact Us
-                            </Button>
-                        </Link>
-                    </motion.div>
+        <section className="relative min-h-[90vh] w-full flex flex-col justify-center overflow-hidden bg-white">
+            {/* Background YOGA Text */}
+            <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center select-none">
+                <div className="text-[120px] sm:text-[170px] md:text-[230px] lg:text-[280px] xl:text-[350px] font-extrabold tracking-[0.12em] text-transparent bg-clip-text bg-gradient-to-r from-primary/15 via-secondary/12 to-accent/15">
+                    YOGA
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Top Left - Quote and ATRI */}
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="absolute top-8 left-8 md:top-12 md:left-12 z-20 max-w-md"
             >
-                <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full animate-ping" />
+                <p className="text-text/70 text-sm md:text-base mb-3 font-medium italic">
+                    &quot;Yoga is not a religion. It is a science.&quot;
+                </p>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-2 font-primary leading-[1] text-primary">
+                    ATRI
+                </h1>
+                <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500">
+                    Arunayoga Training & Research Institute
+                </p>
+            </motion.div>
+
+            {/* Center - Founder Image */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative z-10 flex items-center justify-center h-full"
+            >
+                <div className="relative w-[300px] h-[400px] sm:w-[400px] sm:h-[500px] md:w-[500px] md:h-[600px] lg:w-[600px] lg:h-[700px]">
+                    {/* Foggy/Snowy overlay effect */}
+                    <div className="absolute inset-0 pointer-events-none z-10">
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/20" />
+                        <div className="absolute inset-0 backdrop-blur-[0.5px]" />
+                    </div>
+                    <Image
+                        src="/Classes/founder-removebg-preview.png"
+                        alt="Founder"
+                        fill
+                        priority
+                        className="object-contain drop-shadow-2xl"
+                        style={{ filter: 'brightness(1.05) contrast(0.95)' }}
+                        unoptimized
+                    />
                 </div>
+            </motion.div>
+
+            {/* Bottom Right - Journey Text and Button */}
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-20 max-w-md text-right"
+            >
+                <p className="text-lg md:text-2xl font-bold text-gray-800 mb-4 leading-relaxed">
+                    Start your journey to a healthier and more balanced life.
+                </p>
+                <Link href="/contact">
+                    <Button size="lg" className="bg-primary hover:bg-[#e00000] text-white text-lg h-14 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                        Book to Heal
+                    </Button>
+                </Link>
             </motion.div>
         </section>
     );

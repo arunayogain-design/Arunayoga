@@ -3,61 +3,52 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import ayurvedicTreatmentImage from "@/assets/ayurvedic-treatment-1.jpg";
-import healingMassageImage from "@/assets/healing-point-massage.jpg";
-import lowerBackImage from "@/assets/lower-back-treatment.jpg";
-import upperBackImage from "@/assets/upper-back-treatment.jpg";
-import kneeImage from "@/assets/knee-support.jpg";
-import digestionImage from "@/assets/digestion-improvement.jpg";
-import eyeCareImage from "@/assets/eye-relaxation-treatment.jpg";
-import navarakidiImage from "@/assets/navarakidi.jpg";
-import shirodharaImage from "@/assets/sidhora-treatment.jpg";
 
 const treatments = [
     {
         title: "Ayurvedic Massage",
         desc: "Rejuvenates the whole body, cleanses and detoxifies, prevents stiffness of muscles, releases fatigue, corrects digestion and blood pressure.",
-        image: ayurvedicTreatmentImage,
+        image: "/assets/ayurvedic-treatment-1.jpg",
     },
     {
         title: "Healing Massage",
         desc: "Helps relax the nervous system, relieves stress, anxiety and depression. Facilitates release of deeply seated emotions and improves sensitivity of five senses.",
-        image: healingMassageImage,
+        image: "/assets/healing-point-massage.jpg",
     },
     {
         title: "Kati Vasti (Lower Back)",
         desc: "Increases circulation in the region, nourishes and strengthens muscles and nerves. Relieves chronic lower backaches, painful muscle spasms and stiffness.",
-        image: lowerBackImage,
+        image: "/assets/lower-back-treatment.jpg",
     },
     {
         title: "Greeva Vasti (Upper Back)",
         desc: "Same benefits as Kati Vasti but for the upper back region. Relieves neck pain, shoulder tension and cervical issues.",
-        image: upperBackImage,
+        image: "/assets/upper-back-treatment.jpg",
     },
     {
         title: "Janu Vasti (Knee)",
         desc: "Relief of knee joint pain. Helps alleviate Osteoarthritis of the knee joint and strengthens the knee area.",
-        image: kneeImage,
+        image: "/assets/knee-support.jpg",
     },
     {
         title: "Nabhi Vasti (Digestive)",
         desc: "Strengthens the power of digestion and absorption. Relieves digestive symptoms such as irritable bowel, flatulence, poor appetite and constipation.",
-        image: digestionImage,
+        image: "/assets/digestion-improvement.jpg",
     },
     {
         title: "Netra Vasti (Eye Care)",
         desc: "Refreshes tired, sore, dry eyes. Eases eye tension, twitches, wrinkles and dark circles. Improves vision and nourishes eyes.",
-        image: eyeCareImage,
+        image: "/assets/eye-relaxation-treatment.jpg",
     },
     {
         title: "Navarakidi",
         desc: "Traditional Kerala therapy for radiant skin, relief from body pains, improved blood circulation and deep relaxation.",
-        image: navarakidiImage,
+        image: "/assets/navarakidi.jpg",
     },
     {
         title: "Shirodhara",
         desc: "Stimulates 3rd eye and crown chakras. Relieves stress, anxiety, depression and insomnia. Helps mental focus, reduces migraine and balances Vata Dosha.",
-        image: shirodharaImage,
+        image: "/assets/sidhora-treatment.jpg",
     },
 ];
 
@@ -81,7 +72,7 @@ export default function TreatmentsGrid() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl lg:text-5xl font-bold font-primary text-text mb-4"
                     >
-                        Ayurvedic Wellness Treatments
+                        Ayurvedic Wellness Therapy
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -118,7 +109,7 @@ export default function TreatmentsGrid() {
                                 <h3 className="text-xl font-bold font-primary mb-2">{item.title}</h3>
                                 <p className="text-gray-200 text-sm leading-relaxed mb-3">{item.desc}</p>
                                 <Link href="/contact?subject=treatment" className="inline-block bg-primary/90 hover:bg-primary text-white text-xs px-4 py-2 rounded-full font-semibold transition-colors">
-                                    Book Treatment
+                                    Book Therapy
                                 </Link>
                             </div>
                         </motion.div>

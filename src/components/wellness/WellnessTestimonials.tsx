@@ -16,7 +16,7 @@ const testimonials = [
     {
         name: "Priya Reddy",
         condition: "Stress Management",
-        text: "Arunadevi's holistic approach to stress was exactly what I needed. The Shirodhara treatments were pure bliss. I feel like I have my life back.",
+        text: "Arunadevi's holistic approach to stress was exactly what I needed. The Shirodhara therapy was pure bliss. I feel like I have my life back.",
     }
 ];
 

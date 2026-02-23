@@ -40,7 +40,7 @@ export default function FAQApplication() {
                     ))}
                 </div>
 
-                <div className="text-center bg-primary text-white rounded-2xl p-12 relative overflow-hidden">
+                <div className="text-center bg-brand-dark-grey text-white rounded-2xl p-12 relative overflow-hidden border-2 border-black">
                     <div className="relative z-10">
                         <h3 className="text-3xl font-bold font-primary mb-4">Ready to Start Your Journey?</h3>
                         <p className="text-white/90 mb-8 max-w-xl mx-auto">

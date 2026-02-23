@@ -3,14 +3,13 @@
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import wellnessHeroImage from "@/assets/ayurvedic-treatment-1.jpg";
 
 export default function WellnessHero() {
     return (
         <section className="relative h-[80vh] flex items-center justify-center bg-brand-green overflow-hidden">
             <Image
-                src={wellnessHeroImage}
-                alt="Ayurvedic wellness treatments"
+                src="/assets/ayurvedic-treatment-1.jpg"
+                alt="Ayurvedic wellness therapy"
                 fill
                 priority
                 className="object-cover"
@@ -36,7 +35,7 @@ export default function WellnessHero() {
                             Book Consultation
                         </Button>
                         <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 px-8 text-lg">
-                            View Treatments
+                            View Therapy
                         </Button>
                     </div>
                 </motion.div>

@@ -3,29 +3,27 @@
 import { motion } from "framer-motion";
 import { PlayCircle, ExternalLink } from "lucide-react";
 import Image from "next/image";
-import treatmentThumbOne from "@/assets/community-1.jpeg";
-import treatmentThumbTwo from "@/assets/community-2.jpg";
 
 const testimonialVideos = [
     {
         id: "CWdc-P2AcRU",
         title: "Paralysis Treatment Testimonial - 1",
         href: "https://www.youtube.com/watch?v=CWdc-P2AcRU",
-        image: treatmentThumbOne,
+        thumbnail: "/assets/community-1.jpeg",
         summary: "A recovery journey highlighting the impact of consistent therapeutic yoga and guided treatment support.",
     },
     {
         id: "_LRu5KXZ6Sc",
         title: "Paralysis Treatment Testimonial - 2",
         href: "https://www.youtube.com/watch?v=_LRu5KXZ6Sc",
-        image: treatmentThumbTwo,
+        thumbnail: "/assets/community-2.jpg",
         summary: "A patient experience focused on improved mobility, confidence and quality of life after structured sessions.",
     },
 ];
 
 export default function Testimonials() {
     return (
-        <section className="py-20 bg-primary text-white relative overflow-hidden">
+        <section className="py-20 bg-brand-dark-grey text-white relative overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl lg:text-4xl font-bold font-primary mb-3">
@@ -49,7 +47,7 @@ export default function Testimonials() {
                         >
                             <div className="relative aspect-video overflow-hidden">
                                 <Image
-                                    src={video.image}
+                                    src={video.thumbnail}
                                     alt={video.title}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"

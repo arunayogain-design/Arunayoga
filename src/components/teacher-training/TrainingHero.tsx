@@ -2,13 +2,21 @@
 
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import CollageBackground from "./CollageBackground";
 
 export default function TrainingHero() {
     return (
         <section className="relative min-h-[80vh] flex items-center bg-brand-dark-grey text-white overflow-hidden">
             {/* Background with overlay */}
-            <div className="absolute inset-0 z-0 bg-[url('/assets/community-1.jpeg')] bg-cover bg-center" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-0" />
+            <CollageBackground 
+                images={[
+                    "/Classes/Asana Practice - 3.png",
+                    "/Classes/Pranayama - 3.png",
+                    "/Classes/dhyan.png"
+                ]}
+                opacity={0.3}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10" />
 
             <div className="container mx-auto px-4 relative z-10 pt-20">
                 <div className="max-w-2xl">

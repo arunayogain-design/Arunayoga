@@ -12,7 +12,7 @@ export default function FacultyPreview() {
                         Learn from Yogini Arunadevi
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        Lead Trainer with 30+ years of experience, descending from a lineage of spiritual healers
+                        Lead Trainer with 35+ years of experience, descending from a lineage of spiritual healers
                     </p>
                 </div>
 
@@ -36,7 +36,7 @@ export default function FacultyPreview() {
                         <ul className="space-y-3 text-gray-600 mb-6">
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>
-                                30+ years of teaching experience
+                                35+ years of teaching experience
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-primary font-bold">•</span>

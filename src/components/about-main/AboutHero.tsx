@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import aboutHeroImage from "@/assets/arunadevi-2.png";
 
 export default function AboutHero() {
     return (
         <section className="relative h-[60vh] flex items-center justify-center bg-brand-dark-grey text-white overflow-hidden">
             <Image
-                src={aboutHeroImage}
+                src="/assets/arunadevi-2.png"
                 alt="About Arunayoga"
                 fill
                 priority
@@ -26,7 +25,7 @@ export default function AboutHero() {
                         Our Legacy
                     </h1>
                     <p className="text-xl lg:text-2xl font-light mb-8 max-w-3xl mx-auto text-gray-300">
-                        For over three decades, Arunayoga has been a sanctuary for authentic yoga practice, preserving ancient traditions while adapting to modern needs.
+                        For over 35 years, Arunayoga has been a sanctuary for authentic yoga practice, preserving ancient traditions while adapting to modern needs.
                     </p>
                 </motion.div>
             </div>
