@@ -36,6 +36,20 @@ function TherapySelector({ treatments }: { treatments: typeof treatmentsData }) 
                 <div className="relative min-h-[600px] flex items-center justify-between gap-8">
                     {/* Left Semi-Circle - Therapy Circles */}
                     <div className="relative w-1/2 h-[600px]">
+                        <div className="absolute left-[200px] top-[350px] -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+                            <div className="relative w-[260px] h-[260px] rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <Image
+                                    src="/assets/YOGA.png"
+                                    alt="Yoga"
+                                    fill
+                                    className="object-cover"
+                                    style={{ filter: "grayscale(0.2) contrast(1.05) brightness(0.95)" }}
+                                    unoptimized
+                                />
+                                <div className="absolute inset-0 bg-white/35" />
+                            </div>
+                        </div>
+
                         {treatments.map((treatment, idx) => {
                             // C-shape arc (left side). This draws ~220° arc (open to the right).
                             const totalItems = treatments.length;

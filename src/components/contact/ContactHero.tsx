@@ -8,7 +8,7 @@ export default function ContactHero() {
         <section className="relative py-32 bg-brand-dark-grey text-white overflow-hidden">
             <div
                 className="absolute inset-0 bg-cover bg-fixed bg-center z-0"
-                style={{ backgroundImage: `url(/assets/arunadevi-1.jpg)` }}
+                style={{ backgroundImage: `url(/assets/arunadevi-1.jpg)`, backgroundPosition: "center 20%" }}
             />
             <div className="absolute inset-0 bg-black/65 z-0" />
 

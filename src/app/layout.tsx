@@ -3,6 +3,8 @@ import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import RightActionBar from "@/components/layout/RightActionBar";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 const quicksand = Quicksand({
     subsets: ["latin"],
@@ -28,7 +30,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${quicksand.variable} font-sans antialiased text-text bg-white`}>
+                <ScrollToTop />
                 <Header />
+                <RightActionBar />
                 <main className="min-h-screen pt-20">
                     {children}
                 </main>

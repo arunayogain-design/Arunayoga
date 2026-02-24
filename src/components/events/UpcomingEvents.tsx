@@ -3,6 +3,7 @@
 import { Button } from "../ui/button";
 import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const events = [
     {
@@ -78,9 +79,11 @@ export default function UpcomingEvents() {
                                     {event.description}
                                 </p>
                                 <div className="flex items-center justify-end mt-auto">
-                                    <Button variant="outline" className="group-hover:bg-primary group-hover:text-white transition-colors">
-                                        Register Now <ArrowRight className="w-4 h-4 ml-2" />
-                                    </Button>
+                                    <Link href="/contact?subject=events">
+                                        <Button variant="outline" className="group-hover:bg-primary group-hover:text-white transition-colors">
+                                            Register Now <ArrowRight className="w-4 h-4 ml-2" />
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
